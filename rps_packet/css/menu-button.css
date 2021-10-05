@@ -24,6 +24,7 @@ ul.menu li a:hover,
   background-color: #f4f4f4;
 }
 .menu-icon {
+  --color: white;
   cursor: pointer;
   display: inline-block;
   padding: 0.75em;
@@ -32,7 +33,7 @@ ul.menu li a:hover,
 }
 
 .menu-icon .navicon {
-  background: #333;
+  background: var(--color);
   display: block;
   height: 2px;
   position: relative;
@@ -42,7 +43,7 @@ ul.menu li a:hover,
 
 .menu-icon .navicon:before,
 .menu-icon .navicon:after {
-  background: #333;
+  background: var(--color);
   content: '';
   display: block;
   height: 100%;
@@ -68,7 +69,6 @@ ul.menu li a:hover,
 .menu-btn:checked ~ .menu {
   max-height: 400px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  /*z-index: 9999;*/
 }
 
 .menu-btn:checked ~ .menu-icon .navicon {

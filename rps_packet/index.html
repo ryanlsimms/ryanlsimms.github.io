@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resurrect Park Slope</title>
+  <script type="text/javascript">
+    const url = new URL(location.href);
+    if (url.hash) {
+      url.hash = '';
+      window.location.href = url.href;
+    }
+  </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900">
 <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">-->
   <link rel="stylesheet" href="./css/bootstrap.css">
@@ -35,7 +42,7 @@
     </main>
   </div>
 </section>
-<section id="greetings">
+<section id="greetings" class="pt-5">
   <div class="container">
     <div class="row">
       <div class="d-none d-sm-block col-sm-3 position-relative">
@@ -66,7 +73,7 @@
     </div>
   </div>
 </section>
-<section id="who-we-are" class="pt-5">
+<section id="who-we-are" class="mt-6">
   <div class="background-cover mb-4" style="height: 120px; background-image: url('./images/02church.jpg');"></div>
   <div class="section-title-sticky">
     <div class="container">
@@ -817,11 +824,10 @@
 <script type="text/javascript">
   document.querySelector('body').addEventListener('click', evt => {
     const classList = Array.from(evt.target.classList || []);
-    if (classList.includes('menu-icon') || classList.includes('menu-btn')) {
-      return;
+    const input = document.querySelector('.menu-btn:checked');
+    if (input && !['menu-btn', 'menu-icon', 'navicon'].some(c => classList.includes(c))) {
+      input.checked = false;
     }
-    const input = document.querySelector('.menu-btn:checked') || {};
-    input.checked = false;
   });
 </script>
 </body>
