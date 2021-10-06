@@ -107,6 +107,7 @@ section:nth-child(8) .section-title-sticky { z-index: 785; }
   position: relative;
   top: var(--offset);
   margin-bottom: var(--offset);
+  transform: translate3d(0,0,0);
 }
 .section-title-static h2,
 .section-title-sticky h2 {
