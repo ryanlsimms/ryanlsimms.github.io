@@ -368,6 +368,13 @@ ul.image-row-sm > li > img {
   .section-title-sticky h2 {
     padding-left: 0.5em;
   }
+
+  .committee-row:nth-child(even) .committee-bio {
+    order: 1;
+  }
+  .committee-row:nth-child(even) .committee-image {
+    order: 2;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -422,10 +429,6 @@ ul.image-row-sm > li > img {
     margin: auto;
     width: 100%;
     max-width: 600px;
-  }
-
-  .committee-bio {
-    order: 2;
   }
 }
 
