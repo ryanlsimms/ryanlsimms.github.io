@@ -650,6 +650,8 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </form>
 
 </div>
@@ -667,6 +669,10 @@
 </footer>
 </body>
 <script type="text/javascript">
-  const el = document.getElementById('date-time').innerText = (new Date()).toLocaleTimeString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const format = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+  const el = document.getElementById('date-time');
+  const date = new Date();
+  date.setMinutes (date.getMinutes() - 5);
+  el.innerText = date.toLocaleTimeString('en-US', format);
 </script>
 </html>
